@@ -8,7 +8,15 @@
     <body>
         
     </body>
-    <script>
-        
+    <script type="module">
+        import currencyapi from '../node_modules/@everapi/currencyapi-js';
+
+        const client = new currencyapi('cur_live_icsRNjZqapFF2eekEAU2idpVR7oyIP0gTs4Lsc31')
+        client.latest({
+            base_currency: 'USD',
+            currencies: 'EUR'
+        }).then(response => {
+            console.log(response);
+        });
     </script>
 </html>
